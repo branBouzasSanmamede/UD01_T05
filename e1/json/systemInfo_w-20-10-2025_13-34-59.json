@@ -1,0 +1,82 @@
+{
+  "plataforma": "Windows",
+  "cpus": {
+    "numero": 12,
+    "frecuencias_mhz": [
+      3096.0,
+      3096.0,
+      3096.0,
+      3096.0,
+      3096.0,
+      3096.0,
+      3096.0,
+      3096.0,
+      3096.0,
+      3096.0,
+      3096.0,
+      3096.0
+    ],
+    "uso_por_cpu": [
+      18.2,
+      3.2,
+      26.2,
+      3.1,
+      15.6,
+      1.6,
+      20.0,
+      1.6,
+      4.7,
+      3.1,
+      17.2,
+      1.6
+    ]
+  },
+  "memoria": {
+    "total_bytes": 16996433920,
+    "disponible_bytes": 7671128064,
+    "porcentaje_usado": 54.9
+  },
+  "discos": [
+    {
+      "dispositivo": "C:\\",
+      "punto_montaje": "C:\\",
+      "total_bytes": 511010349056,
+      "usado_bytes": 139410087936,
+      "libre_bytes": 371600261120,
+      "porcentaje_usado": 27.3
+    },
+    {
+      "dispositivo": "D:\\",
+      "punto_montaje": "D:\\",
+      "error": "Permiso denegado"
+    },
+    {
+      "dispositivo": "E:\\",
+      "punto_montaje": "E:\\",
+      "total_bytes": 1000186310656,
+      "usado_bytes": 138010624,
+      "libre_bytes": 1000048300032,
+      "porcentaje_usado": 0.0
+    },
+    {
+      "dispositivo": "G:\\",
+      "punto_montaje": "G:\\",
+      "total_bytes": 511010349056,
+      "usado_bytes": 157990100992,
+      "libre_bytes": 353020248064,
+      "porcentaje_usado": 30.9
+    }
+  ],
+  "disco_io": {
+    "operaciones_lectura": 914299,
+    "operaciones_escritura": 2135089,
+    "bytes_leidos": 44089780224,
+    "bytes_escritos": 37595553280
+  },
+  "red": {
+    "bytes_enviados": 198057056,
+    "bytes_recibidos": 1443830255,
+    "paquetes_enviados": 337587,
+    "paquetes_recibidos": 19842
+  }
+}
