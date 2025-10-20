@@ -66,48 +66,48 @@ class SystemInfo:
 
     def __str__(self):
         s = []
-        s.append(f"Plataforma: {self.plataforma}\n")
+        s.append(f"- Plataforma: {self.plataforma}\n")
 
-        s.append("Información de CPUs:")
-        s.append(f"  Número de CPUs: {self.cpus['numero']}")
+        s.append("- Información de CPUs:")
+        s.append(f"  · Número de CPUs: {self.cpus['numero']}")
         if self.cpus['frecuencias_mhz']:
             for i, f in enumerate(self.cpus['frecuencias_mhz']):
-                s.append(f"  Frecuencia CPU {i}: {f:.2f} MHz")
+                s.append(f"  --> Frecuencia CPU {i}: {f:.2f} MHz")
         else:
-            s.append("  Frecuencia no disponible")
-        s.append("  Uso de CPU por núcleo:")
+            s.append("  · Frecuencia no disponible")
+        s.append("  · Uso de CPU por núcleo:")
         for i, uso in enumerate(self.cpus['uso_por_cpu']):
-            s.append(f"    - CPU {i}: {uso}%")
+            s.append(f"    --> CPU {i}: {uso}%")
         s.append("")
 
-        s.append("Información de memoria:")
-        s.append(f"  Memoria total: {self.memoria['total_bytes'] / (1024**3):.2f} GB")
-        s.append(f"  Memoria disponible: {self.memoria['disponible_bytes'] / (1024**3):.2f} GB")
-        s.append(f"  Porcentaje usado: {self.memoria['porcentaje_usado']}%\n")
+        s.append("- Información de memoria:")
+        s.append(f"  · Memoria total: {self.memoria['total_bytes'] / (1024**3):.2f} GB")
+        s.append(f"  · Memoria disponible: {self.memoria['disponible_bytes'] / (1024**3):.2f} GB")
+        s.append(f"  · Porcentaje usado: {self.memoria['porcentaje_usado']}%\n")
 
-        s.append("Información de discos:")
+        s.append("- Información de discos:")
         for d in self.discos:
             if 'error' in d:
-                s.append(f"  No se pudo acceder a {d['dispositivo']} ({d['punto_montaje']}): {d['error']}")
+                s.append(f"  · No se pudo acceder a {d['dispositivo']} ({d['punto_montaje']}): {d['error']}")
             else:
-                s.append(f"  --> {d['dispositivo']} ({d['punto_montaje']}):")
-                s.append(f"      Total: {d['total_bytes'] / (1024**3):.2f} GB")
-                s.append(f"      Usado: {d['usado_bytes'] / (1024**3):.2f} GB")
-                s.append(f"      Libre: {d['libre_bytes'] / (1024**3):.2f} GB")
-                s.append(f"      Porcentaje: {d['porcentaje_usado']}%")
+                s.append(f"  · {d['dispositivo']} ({d['punto_montaje']}):")
+                s.append(f"      --> Total: {d['total_bytes'] / (1024**3):.2f} GB")
+                s.append(f"      --> Usado: {d['usado_bytes'] / (1024**3):.2f} GB")
+                s.append(f"      --> Libre: {d['libre_bytes'] / (1024**3):.2f} GB")
+                s.append(f"      --> Porcentaje: {d['porcentaje_usado']}%")
         s.append("")
         dio = self.disco_io
-        s.append(f"  Operaciones de lectura: {dio['operaciones_lectura']}")
-        s.append(f"  Operaciones de escritura: {dio['operaciones_escritura']}")
-        s.append(f"  Bytes leídos: {dio['bytes_leidos'] / (1024**2):.2f} MB")
-        s.append(f"  Bytes escritos: {dio['bytes_escritos'] / (1024**2):.2f} MB\n")
+        s.append(f"  · Operaciones de lectura: {dio['operaciones_lectura']}")
+        s.append(f"  · Operaciones de escritura: {dio['operaciones_escritura']}")
+        s.append(f"  · Bytes leídos: {dio['bytes_leidos'] / (1024**2):.2f} MB")
+        s.append(f"  · Bytes escritos: {dio['bytes_escritos'] / (1024**2):.2f} MB\n")
 
-        s.append("Estadísticas de red:")
+        s.append("- Estadísticas de red:")
         r = self.red
-        s.append(f"  Bytes enviados: {r['bytes_enviados'] / (1024**2):.2f} MB")
-        s.append(f"  Bytes recibidos: {r['bytes_recibidos'] / (1024**2):.2f} MB")
-        s.append(f"  Paquetes enviados: {r['paquetes_enviados']}")
-        s.append(f"  Paquetes recibidos: {r['paquetes_recibidos']}")
+        s.append(f"  · Bytes enviados: {r['bytes_enviados'] / (1024**2):.2f} MB")
+        s.append(f"  · Bytes recibidos: {r['bytes_recibidos'] / (1024**2):.2f} MB")
+        s.append(f"  · Paquetes enviados: {r['paquetes_enviados']}")
+        s.append(f"  · Paquetes recibidos: {r['paquetes_recibidos']}")
 
         return "\n".join(s)
     
